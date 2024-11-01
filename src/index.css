@@ -1,7 +1,7 @@
 :root {
     --font-color: #fdfdfde1;
-    --secondary-color: #f04980d8;
-    --accent-color:rgb(192, 25, 67);
+    --secondary-color:#41581bd8 ;
+    --accent-color:#69aa00a9;
     --background-color:rgba(255, 255, 255, 0.116);
     --box-shadow: 0 6px 8px rgba(255, 255, 255, 0.589);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -93,6 +93,7 @@ img {
 }
 
 .input {
+  width: 100%;
   outline: none;
   padding: 8px 10px 8px 10px;
   background-color: var(--background-color);
@@ -105,4 +106,32 @@ img {
 .input:hover,
 .input:focus {
   box-shadow: var(--box-shadow);
+}
+
+.userBtn {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  max-width: 40px;
+  max-height: 40px;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  border: 1px solid var(--accent-color);
+  transition: box-shadow 0.3s linear, background-color 0.3s;
+}
+
+.userIcon {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear;
+}
+
+.userBtn:hover,
+.userBtn:focus {
+  box-shadow: var(--box-shadow);
+  background-color: var(--secondary-color);
+}
+
+.userBtn:hover .userIcon,
+.userBtn:focus .userIcon {
+  fill: var(--font-color);
 }

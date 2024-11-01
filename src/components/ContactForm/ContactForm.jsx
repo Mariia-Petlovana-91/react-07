@@ -1,15 +1,17 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import css from './ContactForm.module.css';
+import { IoClose } from "react-icons/io5";
 import schemaValidate from '../utils/validataSchema';
+import { iconSize } from '../utils/iconSize';
 
-export default function ContactForm({onAddId}) {
+export default function ContactForm({onAddId, setIsVisible}) {
 	const INITIAL__VALUE = {
 	 	name: "",
 	      number: "",
 	}
       
 	function onSubmit(values, actions) {
-		console.log(values);
+		setIsVisible(false);
 		onAddId(values);
 		actions.resetForm();
 		return;
@@ -20,6 +22,14 @@ export default function ContactForm({onAddId}) {
 			onSubmit={onSubmit}
 			validationSchema={schemaValidate}>
 			<Form className={css.form}>
+				<button className='userBtn'
+					type="button"
+					onClick={()=>setIsVisible(false)}
+				>
+					<IoClose className='userIcon'
+						size={iconSize.m}
+					/>
+				</button>
 				<label className="label">
 					<span className="descript">Name</span>
 					<Field className="input"

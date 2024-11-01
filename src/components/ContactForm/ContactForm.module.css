@@ -8,12 +8,11 @@
 	gap: 10px;
 	margin-bottom: 20px;
 	width: 100%;
-
 }
 
 @media (min-width: 768px) {
 	.form {
-		width: 320px;
+		max-width: 800px;
 	}
 }
 
